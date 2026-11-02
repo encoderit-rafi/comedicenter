@@ -1,0 +1,54 @@
+// types.ts
+export type User = {
+  id: number;
+  active: boolean;
+  created_by: number | null;
+  updated_by: number | null;
+  deleted_by: number | null;
+  role: string;
+  uid: string;
+  provider: string;
+  name: string;
+  email: string;
+  phone_code: string;
+  phone: string;
+  avatar: string | null;
+  qr_code: string | null;
+  license: string | null;
+  location_id: number;
+  clinic_id: number | null;
+  is_verified: boolean;
+  is_reviewe_needed: string | null;
+  is_admin: boolean;
+  is_featured: boolean;
+  stripe_customer_id: string;
+  last_login_at: string;
+  hours_of_operation: string | null;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+};
+
+export type VisitHistoryItem = {
+  doctor_clinic: any;
+  id: number;
+  active: boolean;
+  created_by: number;
+  updated_by: number;
+  deleted_by: number | null;
+  uid: string;
+  patient_id: number;
+  provider_id: number;
+  clinic_id: number | null;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+  patient: User;
+  provider: User;
+  clinic: any | null;
+  rating: number | null;
+  name: string;
+  phone: string;
+  role: string;
+  visit_histories: any;
+};

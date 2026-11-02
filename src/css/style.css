@@ -1,0 +1,634 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.cdnfonts.com/css/inter");
+/* @import 'flatpickr/dist/flatpickr.min.css'; */
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+p,
+div,
+body,
+button {
+  font-family: "Inter", sans-serif !important;
+}
+html {
+  overflow-x: hidden !important;
+}
+.tab_filter button[role="tab"] {
+  @apply rounded-none border-b-4 border-[#fff] !bg-transparent !px-6 font-bold text-[#000] transition-all duration-300;
+}
+.tab_filter button[role="tab"][data-state="active"] {
+  @apply rounded-none border-b-4 border-[#2E69B5] !bg-transparent !px-6 font-bold text-[#2E69B5] transition-all duration-300;
+}
+.form-group input,
+button:not([role="checkbox"]):not([role="switch"]) {
+  min-height: 50px;
+  font-size: 16px;
+}
+.feature-slider .slick-track {
+  display: flex;
+}
+.feature-slider .slick-track .slick-slide {
+  height: inherit;
+}
+.feature-slider .slick-track .slick-slide > div {
+  height: 100%;
+}
+/* filter slider */
+.filter-slider .slick-list {
+  margin: 0 -10px;
+}
+.filter-slider .swiper-slide {
+  height: auto;
+}
+.acc_faq h3 button {
+  @apply flex-row-reverse justify-end gap-3;
+}
+.acc_faq > div[data-state="closed"] {
+  @apply border-none px-[15px];
+}
+.acc_faq > div[data-state="open"] {
+  @apply rounded-[10px] bg-[#7686981A] px-[15px];
+}
+.acc_faq > div[data-state="open"] h3 button {
+}
+.swiper-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* Prevent excessive overflow */
+}
+.parent-container {
+  width: 100%;
+  max-width: 100%; /* Ensures Swiper takes full width */
+  box-sizing: border-box;
+}
+
+.swiper {
+  width: 100%; /* Matches the parent's width */
+  height: auto;
+}
+@layer utilities {
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 10px;
+  }
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #e0e3e8;
+  }
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #b5bdc9;
+    border-radius: 5px;
+  }
+}
+.cancel-dialog > button {
+  @apply hidden;
+}
+.cancel-dialog .form-group input,
+.cancel-dialog button:not([role="checkbox"]):not([role="switch"]) {
+  min-height: auto !important;
+}
+.plan-form button:not([role="checkbox"]):not([role="switch"]) {
+  @apply min-h-[auto];
+}
+.review_modal button:not([role="checkbox"]):not([role="switch"]) {
+  @apply min-h-[auto];
+}
+.player-wrapper video {
+  /* object-fit: contain; */
+  background-color: #e7f0fa;
+}
+.player-wrapper .land_scape video,
+.player-wrapper .land_scape img {
+  object-fit: cover !important;
+}
+.form-group input,
+button:not([role="checkbox"]):not([role="switch"]) {
+  @apply min-h-[auto];
+}
+[role="radiogroup"] button > span {
+  @apply pl-[0.5px] pt-[0.5px];
+}
+.drop-menus > li:not(:last-child) {
+  @apply border-b border-b-[#E0E0E0];
+}
+input.input-banner::placeholder {
+  color: #0000004f;
+  opacity: 0.85;
+  outline: 0;
+}
+[role="radiogroup"] button > span {
+  padding-left: 0.4px;
+}
+.success-modal .close-icon {
+  @apply !hidden;
+}
+.success-checkmark {
+  width: 80px;
+  height: 115px;
+  margin: 0 auto;
+}
+.success-checkmark .check-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50%;
+  box-sizing: content-box;
+  border: 4px solid #4caf50;
+}
+.success-checkmark .check-icon::before {
+  top: 3px;
+  left: -2px;
+  width: 30px;
+  transform-origin: 100% 50%;
+  border-radius: 100px 0 0 100px;
+}
+.success-checkmark .check-icon::after {
+  top: 0;
+  left: 30px;
+  width: 60px;
+  transform-origin: 0 50%;
+  border-radius: 0 100px 100px 0;
+  animation: rotate-circle 4.25s ease-in;
+}
+.success-checkmark .check-icon::before,
+.success-checkmark .check-icon::after {
+  content: "";
+  height: 100px;
+  position: absolute;
+  background: #ffffff;
+  transform: rotate(-45deg);
+}
+.success-checkmark .check-icon .icon-line {
+  height: 5px;
+  background-color: #4caf50;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+}
+.success-checkmark .check-icon .icon-line.line-tip {
+  top: 46px;
+  left: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+  animation: icon-line-tip 0.75s;
+}
+.success-checkmark .check-icon .icon-line.line-long {
+  top: 38px;
+  right: 8px;
+  width: 47px;
+  transform: rotate(-45deg);
+  animation: icon-line-long 0.75s;
+}
+.success-checkmark .check-icon .icon-circle {
+  top: -4px;
+  left: -4px;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: content-box;
+  border: 4px solid rgba(76, 175, 80, 0.5);
+}
+.success-checkmark .check-icon .icon-fix {
+  top: 8px;
+  width: 5px;
+  left: 26px;
+  z-index: 1;
+  height: 85px;
+  position: absolute;
+  transform: rotate(-45deg);
+  background-color: #ffffff;
+}
+
+@keyframes rotate-circle {
+  0% {
+    transform: rotate(-45deg);
+  }
+  5% {
+    transform: rotate(-45deg);
+  }
+  12% {
+    transform: rotate(-405deg);
+  }
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+@keyframes icon-line-tip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
+}
+@keyframes icon-line-long {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+  84% {
+    width: 55px;
+    right: 0px;
+    top: 35px;
+  }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
+}
+
+.addbtn {
+  border-radius: 5px !important;
+}
+.radio-check-me button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  width: 18px;
+}
+.privacy-terms ul {
+  padding-left: 20px;
+}
+.privacy-terms ul li {
+  list-style-type: disc;
+}
+.text-limit-x {
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-align: center;
+}
+.text-limit3 {
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: calc(100% - 100px);
+  text-align: center;
+}
+.text-limit4 {
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  max-width: calc(100% - 10px);
+  text-align: left;
+}
+.text-limit5 {
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  max-width: 220px;
+  text-align: left;
+}
+/* Custom styles for the radio buttons */
+.radio-check-me [data-state="checked"] {
+  background-color: #92278f !important;
+  border-color: #92278f !important;
+}
+
+.radio-check-me [data-state="unchecked"] {
+  background-color: white;
+  border: 1px solid #d4d4d4;
+}
+
+.radio-check-me .RadioGroupItem {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+
+.radio-check-me .RadioGroupItem[data-state="checked"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.role-select svg {
+  display: none !important;
+}
+textarea {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+}
+input {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  box-shadow: none;
+  /* @apply focus:outline-none focus:ring-0 focus:ring-offset-0 */
+  border-radius: 8px !important;
+}
+input:focus,
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+input.input-banner::placeholder {
+  opacity: 0.31;
+}
+input::placeholder,
+textarea::placeholder {
+  @apply text-[16px] !font-[500] !text-[#000] opacity-[.16];
+}
+button[type="submit"] {
+  @apply !h-auto !rounded-[16px] !py-5 !text-[18px] !font-[600];
+}
+
+.menu-list-item span {
+  opacity: 0.8;
+}
+.menu-list-item.active span {
+  font-weight: 700;
+}
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, #9e1f63, #2e3192);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.data-\[state\=checked\]\:bg-slate-900[data-state="checked"] {
+  @apply !bg-[#7B2199];
+}
+body {
+  overflow-x: hidden;
+}
+.text-limit {
+  display: inline-block;
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+/* From Uiverse.io by alexruix */
+.loader {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  position: relative;
+}
+
+.loader:before {
+  content: "";
+  width: 48px;
+  height: 5px;
+  background: #7e22ce;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow324 0.5s linear infinite;
+}
+
+.loader:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #7b2199;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  animation: jump7456 0.5s linear infinite;
+}
+
+@keyframes jump7456 {
+  15% {
+    border-bottom-right-radius: 3px;
+  }
+
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow324 {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
+@layer base {
+}
+.height-inherit {
+  height: inherit;
+}
+.skeleton-loader {
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+button[aria-selected="true"][name="day"].hover\:text-slate-900:hover {
+  color: #fff !important;
+}
+input.input-banner {
+  @apply max-[600px]:py-[14px];
+}
+.input-banner::placeholder {
+  @apply max-[600px]:text-[14px] max-[400px]:text-[12px];
+}
+/* Add these styles to your global CSS file */
+.react-time-picker {
+  display: inline-flex;
+  position: relative;
+  padding: 0px !important;
+}
+
+.react-time-picker__wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 0.375rem;
+}
+
+.react-time-picker__inputGroup {
+  min-width: calc(4px + (4px * 3) + 0.54em * 6 + 0.217em * 2);
+  flex-grow: 1;
+  padding: 7px 6px;
+}
+
+.react-time-picker__inputGroup__input {
+  min-width: 0.54em;
+  height: 100%;
+  position: relative;
+  padding: 0 1px;
+  border: 0;
+  background: none;
+  color: currentColor;
+  font: inherit;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.react-time-picker__inputGroup__input::-webkit-outer-spin-button,
+.react-time-picker__inputGroup__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.react-time-picker__inputGroup__input:invalid {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.react-time-picker__inputGroup__input--hasLeadingZero {
+  margin-left: -0.54em;
+  padding-left: calc(1px + 0.54em);
+}
+
+.react-time-picker__inputGroup__divider {
+  padding: 1px 0;
+  white-space: pre;
+}
+
+.react-time-picker__inputGroup__input:focus {
+  outline: none;
+}
+
+.react-time-picker__inputGroup__amPm {
+  font: inherit;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.react-time-picker__button {
+  border: 0;
+  background: transparent;
+  padding: 4px 6px;
+}
+
+.react-time-picker__button:enabled {
+  cursor: pointer;
+}
+
+.react-time-picker__button:enabled:hover .react-time-picker__button__icon,
+.react-time-picker__button:enabled:focus .react-time-picker__button__icon {
+  stroke: #0078d7;
+}
+
+.react-time-picker__button:disabled .react-time-picker__button__icon {
+  stroke: #6d6d6d;
+}
+
+.react-time-picker__button svg {
+  display: inherit;
+}
+
+.react-time-picker__clock {
+  width: 200px;
+  height: 200px;
+  max-width: 100vw;
+  padding: 25px;
+  background-color: white;
+  border: 1px solid #a0a096;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+}
+
+.react-time-picker__clock--closed {
+  display: none;
+}
+.h-inherit {
+  height: inherit;
+}
+video::-webkit-media-controls-overflow-menu {
+  display: none !important;
+}
+@media (max-width: 1400px) {
+  .menu-list-item {
+    font-size: 14px;
+  }
+}
+.ae_video .swiper {
+  overflow: visible !important;
+}
+.ae_video .swiper,
+.ae_video .swiper * {
+  contain: none; /* prevents layout containment clipping in some setups */
+}
+/* .no-fs::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+.no-fs::-webkit-media-controls-enclosure {
+  overflow: hidden;
+} */
